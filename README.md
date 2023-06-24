@@ -1,6 +1,6 @@
 # Orelop Static（仮）
 
-![screenshot](https://github.com/hilosiva/orelop-static/blob/main/public/screenshot.png)
+![screenshot](https://github.com/hilosiva/orelop-static/blob/main/public/ogp.png)
 
 ## 概要
 
