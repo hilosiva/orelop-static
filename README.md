@@ -51,11 +51,10 @@ npm install
 > 2. お使いのマシンのホームディレクトリ（他のプロジェクトでも使える）かプロジェクトのルートディレクトリ（このプロジェクトのみ使える）に「.npmrc」ファイルを作成し、以下の内容で保存
 >
 > ```
-> @{GitHubのユーザ名}:registry="https://npm.pkg.github.com"
+> @hilosiva:registry="https://npm.pkg.github.com"
 > //npm.pkg.github.com/:_authToken={Personal access tokens}
 > ```
 >
-> ※ {GitHub のユーザ名} は GitHub のユーザ名か組織名に置き換える
 > ※ {Personal access tokens} は「1」で取得したトークンに置き換える
 >
 > 例
