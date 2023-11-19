@@ -21,7 +21,15 @@ Orelop Static を利用するには、あらかじめ以下のツールをマシ
 - [Node.js](https://nodejs.org/ja) >=16.4.0
 - [git](https://git-scm.com/)
 
-## インストール
+## ダウンロード
+
+### zipファイルでダウンロード
+
+1. [zipファイルをダウンロード](https://github.com/hilosiva/orelop-static/archive/refs/heads/main.zip)
+2. ダウンロードしたzipファイルを解凍
+3. 解凍したディレクトリ名をプロジェクト名に変更
+
+### コマンドでダウンロード
 
 1. ターミナルを開き、「Orelop Static」を初期化したいディレクトリに移動します。
 
@@ -35,13 +43,17 @@ cd /path/to/project-directory
 npx degit hilosiva/orelop-static#main <project-name>
 ```
 
-3. プロジェクトディレクトリに移動します。
+※ 「<project-name>」 はプロジェクト名に変更してください。
+
+## インストール
+
+1. ターミナルを開きプロジェクトディレクトリに移動します。
 
 ```bash
-cd <project-name>
+cd /path/to/<project-name>
 ```
 
-4. 必要な依存関係をインストールします。
+2. 必要な依存関係をインストールします。
 
 ```bash
 npm install
