@@ -8,6 +8,12 @@ Orelop Static は、俺流の静的サイト開発環境です。
 フロントエンドツールには「[vite](https://ja.vitejs.dev/)
 」を利用しているため、高速に静的サイトを開発することが可能です。
 
+- HTML + CSS（Scss/Sass） + JavaScriptによる開発が可能
+- CSSファイルにおいてもファイル分割やスタイルのネスト（入れ子）が可能
+- 画像やCSSファイル、JavaScriptファイルはビルド時にハッシュ値をファイル名に付与
+- 画像はビルド時に圧縮し、WebP、AVIFファイルを生成（htaccessで最適な画像をリスポンス）
+
+
 ## 準備
 
 Orelop Static を利用するには、あらかじめ以下のツールをマシンにインストールしておいて下さい。
@@ -45,7 +51,7 @@ npm install
 >
 > Orelop Static は、GitHub Package に公開されているパッケージを利用するため、インストールには、GitHub の「[Personal access tokens (classic)](https://github.com/settings/tokens)」が必要となります。
 >
-> すでに、お使いのマシンのホームディレクトリに、 GitHub の「 > **read:packages** 」権限を付与した「[Personal access tokens > (classic)](https://github.com/settings/tokens)」を記述した、「.npmrc」ファイルを作成されていない場合は、以下の操作で「.npmrc」ファイルを作成し、GitHub Package をインストールできるようにしておいて下さい。
+> 以下の手順で「.npmrc」ファイルを作成し、@hilosiva の GitHub Package をインストールできるようにしておいて下さい。
 >
 > 1. GitHub の「 **read:packages** 」権限を付与した「[Personal access tokens (classic)](https://github.com/settings/tokens)」を取得
 > 2. お使いのマシンのホームディレクトリ（他のプロジェクトでも使える）かプロジェクトのルートディレクトリ（このプロジェクトのみ使える）に「.npmrc」ファイルを作成し、以下の内容で保存

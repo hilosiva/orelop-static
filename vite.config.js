@@ -12,7 +12,7 @@ const dir = {
 
 export default defineConfig({
   root: dir.src,
-  base: "./",
+  // base: "./",
   publicDir: `../${dir.publicDir}`,
   plugins: [
     viteHtmlOreder(),
