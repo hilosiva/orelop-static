@@ -12,7 +12,8 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "lint:html": "markuplint \"**/*.html\"",
-    "lint:css": "stylelint --fix **/*.{css,scss,sass}"
+    "lint:css": "stylelint --fix **/*.{css,scss,sass}",
+    "lint:es": "eslint /src --fix"
   },
   "devDependencies": {
     "@hilosiva/vite-plugin-html-oreder": "^0.1.1",
@@ -20,11 +21,14 @@
     "autoprefixer": "^10.4.14",
     "css-declaration-sorter": "^7.0.0",
     "css-mqpacker": "^7.0.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "glob": "^10.2.7",
     "markuplint": "^3.10.0",
     "path": "^0.12.7",
     "postcss-nesting": "^11.2.2",
-    "prettier": "^2.8.8",
+    "prettier": "^3.1.0",
     "sass": "^1.63.2",
     "sharp": "^0.32.1",
     "stylelint": "^15.7.0",
