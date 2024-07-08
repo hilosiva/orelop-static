@@ -7,8 +7,6 @@ module.exports = {
     require("css-declaration-sorter")({
       order: "smacss", // alphabetical/ smacss / concentric-css
     }),
-    require("css-mqpacker")({
-      sort: true, // スマホファーストに並び替え
-    }),
+    require("postcss-sort-media-queries"),
   ],
 };

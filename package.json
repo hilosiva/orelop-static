@@ -16,11 +16,10 @@
     "lint:es": "eslint /src --fix"
   },
   "devDependencies": {
-    "@hilosiva/vite-plugin-html-oreder": "^0.1.3",
-    "@hilosiva/vite-plugin-image-oretimaizer": "^0.2.2",
+    "@hilosiva/vite-plugin-html-oreder": "^0.1.4",
+    "@hilosiva/vite-plugin-image-oretimaizer": "^0.2.4",
     "autoprefixer": "^10.4.14",
     "css-declaration-sorter": "^7.0.0",
-    "css-mqpacker": "^7.0.0",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
@@ -28,6 +27,7 @@
     "markuplint": "^3.10.0",
     "path": "^0.12.7",
     "postcss-nesting": "^11.2.2",
+    "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.1.0",
     "sass": "^1.63.2",
     "sharp": "^0.32.1",

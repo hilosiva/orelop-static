@@ -29,7 +29,7 @@ Orelop Static を利用するには、あらかじめ以下のツールをマシ
 2. ダウンロードしたzipファイルを解凍
 3. 解凍したディレクトリ名をプロジェクト名に変更
 
-### コマンドでダウンロード
+### インストール
 
 1. ターミナルを開き、「Orelop Static」を初期化したいディレクトリに移動します。
 
@@ -37,50 +37,14 @@ Orelop Static を利用するには、あらかじめ以下のツールをマシ
 cd /path/to/project-directory
 ```
 
-2. 以下のコマンドを実行して、「Orelop Static」をダウンロードします。
+2. 以下のコマンドを実行して、「Orelop Static」をインストールします。
 
 ```bash
-npx degit hilosiva/orelop-static#main <project-name>
+npm create orelop-static
 ```
 
 ※ 「<project-name>」 はプロジェクト名に変更してください。
 
-## インストール
-
-1. ターミナルを開きプロジェクトディレクトリに移動します。
-
-```bash
-cd /path/to/<project-name>
-```
-
-2. 必要な依存関係をインストールします。
-
-```bash
-npm install
-```
-
-> **注意**
->
-> Orelop Static は、GitHub Package に公開されているパッケージを利用するため、インストールには、GitHub の「[Personal access tokens (classic)](https://github.com/settings/tokens)」が必要となります。
->
-> 以下の手順で「.npmrc」ファイルを作成し、@hilosiva の GitHub Package をインストールできるようにしておいて下さい。
->
-> 1. GitHub の「 **read:packages** 」権限を付与した「[Personal access tokens (classic)](https://github.com/settings/tokens)」を取得
-> 2. お使いのマシンのホームディレクトリ（他のプロジェクトでも使える）かプロジェクトのルートディレクトリ（このプロジェクトのみ使える）に「.npmrc」ファイルを作成し、以下の内容で保存
->
-> ```
-> @hilosiva:registry="https://npm.pkg.github.com"
-> //npm.pkg.github.com/:_authToken={Personal access tokens}
-> ```
->
-> ※ {Personal access tokens} は「1」で取得したトークンに置き換える
->
-> 例
->
-> ```
-> @hilosiva:registry="https://npm.pkg.github.com"
-> //npm.pkg.github.com/:_authToken=ghp_XXXXXXXXXXXXXXXXXXXXX
-> ```
 
 ## 開発用サーバーの起動
 
