@@ -16,6 +16,7 @@
     "lint:es": "eslint /src --fix"
   },
   "devDependencies": {
+    "@hilosiva/postcss-transore": "^0.1.0",
     "@hilosiva/vite-plugin-html-oreder": "^0.1.4",
     "@hilosiva/vite-plugin-image-oretimaizer": "^0.2.4",
     "autoprefixer": "^10.4.14",

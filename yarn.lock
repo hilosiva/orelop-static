@@ -192,6 +192,13 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@hilosiva/postcss-transore@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@hilosiva/postcss-transore/-/postcss-transore-0.1.0.tgz#cc480ddfa25ac2abffcc53098a686ddbc16f79bd"
+  integrity sha512-5xtUjfDHAjbJw6Isz3wK+orHfyV6GD3afZa06JCqDErDo5J0Z64mFgCPC6iQiIGf9JIaqhyjdQbTM9dBZfUWcQ==
+  dependencies:
+    postcss "^8.4.39"
+
 "@hilosiva/vite-plugin-html-oreder@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@hilosiva/vite-plugin-html-oreder/-/vite-plugin-html-oreder-0.1.4.tgz#9e07f4b5ad0eea7d0d887258fd2af8f028c72812"
@@ -2677,7 +2684,7 @@ postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.24:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.4.4:
+postcss@^8.4.39, postcss@^8.4.4:
   version "8.4.39"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.39.tgz#aa3c94998b61d3a9c259efa51db4b392e1bde0e3"
   integrity sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==

@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    require("@hilosiva/postcss-transore"),
     require("postcss-nesting"),
     require("autoprefixer")({
       grid: "autoplace", // IE11対応
