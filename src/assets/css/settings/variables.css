@@ -1,0 +1,83 @@
+@custom-media --xxs (width >= 375px);
+@custom-media --xs (width >= 414px);
+@custom-media --sm (width >= 576px);
+@custom-media --md (width >= 768px);
+@custom-media --lg (width >= 1024px);
+@custom-media --xl (width >= 1280px);
+@custom-media --xxl (width >= 1440px);
+
+:root {
+  /* Color */
+  --color-main: #36b08b;
+  --color-dark: #212121;
+
+  /* Font Family */
+  --font-sans-ja: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
+  --font-sans-en: "Helvetica Neue", "Arial", system-ui, sans-serif;
+
+  /* Font Size */
+
+  /* Line Height */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-normal: normal;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Space */
+  --space-base: 8;
+
+  /* Radius */
+  --radius-sm: 1rem;
+  --radius-md: 2rem;
+  --radius-lg: 2.5rem;
+  --radius-full: 50%;
+
+  /* Arrow */
+  --arrow-width: 12%;
+  --arrow-prev: polygon(
+    100% var(--line-width),
+    calc(100% - var(--line-width)) 0,
+    calc(50% - var(--line-width)) 50%,
+    calc(100% - var(--line-width)) 100%,
+    100% calc(100% - var(--line-width)),
+    calc(50% + var(--line-width)) 50%,
+    100% var(--line-width)
+  );
+  --arrow-next: polygon(
+    0 var(--line-width),
+    var(--line-width) 0,
+    calc(50% + var(--line-width)) 50%,
+    var(--line-width) 100%,
+    0 calc(100% - var(--line-width)),
+    calc(50% - var(--line-width)) 50%,
+    0 var(--line-width)
+  );
+
+  /* Container Size & Offset */
+  --max-container-size: 1440px;
+  --offset-xs: 1.5vw;
+  --offset-sm: 2.5vw;
+  --offset-md: 5vw;
+  --offset-lg: 10vw;
+
+  /* Transition & Animation */
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 1.2s;
+  --ease-in-sine: cubic-bezier(0.12, 0, 0.39, 0);
+  --ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+}

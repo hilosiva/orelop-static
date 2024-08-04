@@ -25,8 +25,6 @@ export default defineConfig({
   ],
   build: {
     outDir: `../${dir.outDir}`,
-    target: "es2018",
-    cssTarget: "safari14",
     emptyOutDir: true,
     rollupOptions: {
       output: {

@@ -1,10 +1,11 @@
 module.exports = {
   plugins: [
-    require("@hilosiva/postcss-transore"),
-    require("postcss-nesting"),
-    require("autoprefixer")({
-      grid: "autoplace", // IE11対応
+    require("@hilosiva/postcss-transore", {
+      minViewPort: 320,
+      maxViewPort: 1440,
     }),
+    require("postcss-preset-env"),
+    require("autoprefixer"),
     require("css-declaration-sorter")({
       order: "smacss", // alphabetical/ smacss / concentric-css
     }),

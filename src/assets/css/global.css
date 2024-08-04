@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@layer settings, base, layouts, vendors, components, utilities;
+
+/* Settings */
+@import "settings/variables" layer(settings);
+
+/* Base */
+@import "base/oreset" layer(base);
+
+/* Layouts */
+@import "layouts/container" layer(layouts);
+
+/* Components */
+@import "components/hero" layer(components);
+
+/* utilities */
+@import "utilities/visually-hidden" layer(utilities);

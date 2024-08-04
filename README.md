@@ -10,6 +10,7 @@ Orelop Static は、俺流の静的サイト開発環境です。
 
 - HTML + CSS（Scss/Sass） + JavaScriptによる開発が可能
 - CSSファイルにおいてもファイル分割やスタイルのネスト（入れ子）が可能
+- CSSファイル内で`pxtorem()`、`pxtoem()`、`fluid()`が利用可能
 - 画像やCSSファイル、JavaScriptファイルはビルド時にハッシュ値をファイル名に付与
 - 画像はビルド時に圧縮し、WebP、AVIFファイルを生成（htaccessで最適な画像をリスポンス）
 
@@ -79,7 +80,7 @@ HTML ファイルは「src」ディレクトリに配置して下さい。
 
 ### CSS で開発
 
-CSS で開発するには「src/assets/css/」ディレクトリ内にある「style.css」を利用して下さい。
+CSS で開発するには「src/assets/css/」ディレクトリ内にある「global.css」を利用して下さい。
 
 「Orelop Static」は、「[CSS Nesting Module](https://www.w3.org/TR/css-nesting-1/)」に対応しているため、スタイルルールのネスト（入れ子）が利用できます。
 
@@ -99,19 +100,57 @@ CSS で開発するには「src/assets/css/」ディレクトリ内にある「s
 
 また、`@import` による、CSS ファイルを分割にも対応しています。
 
-例：「foundation」ディレクトリ内のと「oreset.css」と「object」ディレクトリ内の「hero.css」の読み込み
+例：「base」ディレクトリ内の「oreset.css」と「components」ディレクトリ内の「hero.css」の読み込み
 
 ```css
-@import "foundation/oreset.css";
-@import "object/hero.css";
+@import "base/oreset.css";
+@import "components/hero.css";
 ```
+
+また、CSSファイル内で下記のオリジナル関数が利用可能です。
+
+- `pxtorem()` : `px` を `rem` に変換
+- `pxtoem()` ： `px` を `em` に変換
+- `fluid()` : 最小値（px）、最大値（px）から `clamp()` を生成
+
+```css
+div {
+  margin-block-start: pxtorem(32); /* 2rem */
+  padding-block: pxtoem(24) pxtoem(16); /* 1.5em 1em  */
+}
+
+p {
+  /*
+    fluid(最小値（px）, 最大値(px), [最小ビューポート(px)], [最大ビューポート(px)])
+    最小ビューポートの初期値： 320
+    最大ビューポートの初期値： 1920
+  */
+  font-size: fluid(16,24); /* clamp(1rem, 0.8786407766990291rem + 0.517799352750809vw, 1.5rem) */
+}
+```
+
+
+最小ビューポートや、 最大ビューポートの初期値を変更する場合は、`postcss.config.cjs` で、`postcss-transore` のオプションを指定します。
+
+```js
+module.exports = {
+  plugins: [
+    require("@hilosiva/postcss-transore", {
+      minViewPort: 375, // 最小ビューポートの初期値を 375 に変更
+      maxViewPort: 1440, // 最大ビューポートの初期値を 1440 に変更
+    }),
+  ],
+};
+```
+
+
 
 ### SCSS で開発
 
 scss を使って CSS を開発する場合は、「src/assets/scss/」ディレクトリ内に scss ファイルを作成して、HTML ファイルに `<link>` 要素で読み込んでください。
 
 ```html
-<link rel="stylesheet" href="/assets/scss/style.scss" />
+<link rel="stylesheet" href="/assets/scss/global.scss" />
 ```
 
 glob パターンによる読み込みにも対応しています。

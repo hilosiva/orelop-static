@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* stylelint-disable */
 
-/*! Oreset.css v2.0.0 | MIT License | https://github.com/hirosiva/Oreset.css */
+/*! Oreset.css v2.0.0 | MIT License | https://github.com/hilosiva/Oreset.css */
 /*
   # Global
 ---------------------------------------------- */
@@ -45,7 +45,7 @@
 }
 
 :where(ul, ol) {
-  list-style: none;
+  list-style-type: "";
 }
 
 /*
@@ -120,6 +120,18 @@
   display: none;
 }
 
+:where(dialog, [popover]) {
+  border: none;
+  background: none;
+  color: inherit;
+  inset: unset;
+  max-width: unset;
+  max-height: unset;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none;
+}
 /*
   # Accessibility
 ---------------------------------------------- */
@@ -154,7 +166,8 @@
 @media (prefers-reduced-motion: reduce) {
   *,
   *:before,
-  *:after {
+  *:after,
+  ::backdrop {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
