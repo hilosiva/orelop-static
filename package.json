@@ -7,6 +7,9 @@
   "browserslist": [
     "> 0.3%, Firefox ESR, not dead"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

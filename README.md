@@ -19,7 +19,7 @@ Orelop Static は、俺流の静的サイト開発環境です。
 
 Orelop Static を利用するには、あらかじめ以下のツールをマシンにインストールしておいて下さい。
 
-- [Node.js](https://nodejs.org/ja) >=16.4.0
+- [Node.js](https://nodejs.org/ja) >=20
 - [git](https://git-scm.com/)
 
 ## ダウンロード

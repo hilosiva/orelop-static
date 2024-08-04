@@ -7,6 +7,15 @@
 @custom-media --xxl (width >= 1440px);
 
 :root {
+  /* tool */
+  --torem: calc(1rem / 16);
+  --torlh: calc(1rlh / 16);
+
+  /* Design */
+  --design-widith-sm: 375;
+  --design-widith-md: 768;
+  --design-widith-lg: 1440;
+
   /* Color */
   --color-main: #36b08b;
   --color-dark: #212121;
@@ -16,8 +25,35 @@
   --font-sans-en: "Helvetica Neue", "Arial", system-ui, sans-serif;
 
   /* Font Size */
+  --font-base: 16;
+  --font-ratio: 8;
+  --font-2xs: calc(var(--font-base) * var(--font-ratio) / 12 * var(--torem));
+  --font-xs: calc(var(--font-base) * var(--font-ratio) / 10 * var(--torem));
+  --font-sm: calc(var(--font-base) * var(--font-ratio) / 9 * var(--torem));
+  --font-md: calc(var(--font-base) * var(--font-ratio) / 8 * var(--torem));
+  --font-lg: calc(var(--font-base) * var(--font-ratio) / 7 * var(--torem));
+  --font-xl: calc(var(--font-base) * var(--font-ratio) / 5 * var(--torem));
+  --font-2xl: calc(var(--font-base) * var(--font-ratio) / 3 * var(--torem));
+
+  /* Font Size */
+  --font-fluid-xs: fluid(10.667, 12.8);
+  --font-fluid-sm: fluid(14.222, 16);
+  --font-fluid-md: fluid(16, 18.286);
+  --font-fluid-lg: fluid(18, 21.333);
+  --font-fluid-xl: fluid(25.6, 32);
+  --font-fluid-2xl: fluid(32, 42.667);
+  --font-fluid-3xl: fluid(42.667, 64);
 
   /* Line Height */
+  --leading-base: 4;
+  --leading-xs: calc(var(--leading-base) * 3 * var(--torem));
+  --leading-sm: calc(var(--leading-base) * 4 * var(--torem));
+  --leading-md: calc(var(--leading-base) * 5 * var(--torem));
+  --leading-lg: calc(var(--leading-base) * 6 * var(--torem));
+  --leading-xl: calc(var(--leading-base) * 7 * var(--torem));
+  --leading-2xl: calc(var(--leading-base) * 8 * var(--torem));
+  --leading-3xl: calc(var(--leading-base) * 9 * var(--torem));
+  --leading-4xl: calc(var(--leading-base) * 10 * var(--torem));
   --leading-none: 1;
   --leading-tight: 1.25;
   --leading-normal: 1.5;
@@ -25,13 +61,28 @@
   --leading-loose: 2;
 
   /* Letter Spacing */
+  --tracking-tigher: -0.05em;
+  --tracking-tight: -0.025em;
   --tracking-normal: normal;
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
 
+  /* Container Size & Offset */
+  --max-container-size: 1440px;
+  --offset-xs: 1.5vw;
+  --offset-sm: 2.5vw;
+  --offset-md: 5vw;
+  --offset-lg: 10vw;
+
   /* Space */
   --space-base: 8;
+  --space-2xs: calc(var(--space-base) * var(--torem));
+  --space-xs: calc(var(--space-base) * 2 * var(--torem));
+  --space-sm: calc(var(--space-base) * 3 * var(--torem));
+  --space-md: calc(var(--space-base) * 5 * var(--torem));
+  --space-lg: calc(var(--space-base) * 8 * var(--torem));
+  --space-xl: calc(var(--space-base) * 13 * var(--torem));
 
   /* Radius */
   --radius-sm: 1rem;
@@ -60,13 +111,6 @@
     0 var(--line-width)
   );
 
-  /* Container Size & Offset */
-  --max-container-size: 1440px;
-  --offset-xs: 1.5vw;
-  --offset-sm: 2.5vw;
-  --offset-md: 5vw;
-  --offset-lg: 10vw;
-
   /* Transition & Animation */
   --duration-fast: 0.3s;
   --duration-normal: 0.6s;
@@ -80,4 +124,15 @@
   --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* Viewport */
+  --viewport: var(--design-widith-sm);
+
+  @media (--md) {
+    --viewport: var(--design-widith-md);
+  }
+
+  @media (--lg) {
+    --viewport: var(--design-widith-lg);
+  }
 }
