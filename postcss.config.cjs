@@ -1,9 +1,6 @@
 module.exports = {
   plugins: [
-    require("@hilosiva/postcss-transore", {
-      minViewPort: 320,
-      maxViewPort: 1440,
-    }),
+    require("@hilosiva/postcss-transore"),
     require("postcss-preset-env"),
     require("autoprefixer"),
     require("css-declaration-sorter")({
