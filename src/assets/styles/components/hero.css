@@ -14,8 +14,10 @@
 }
 
 .hero__title {
+  margin-block: fluid(2.5rem 4rem) fluid(24px 32px 768px 1024px);
   font-family: var(--font-sans-en);
-  font-size: fluid(24, 80);
+  /* font-size: fluid(24px, 80px); */
+  font-size: fluid(24px 40px);
   letter-spacing: var(--tracking-widest);
 }
 

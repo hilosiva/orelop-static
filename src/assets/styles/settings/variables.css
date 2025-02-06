@@ -35,15 +35,6 @@
   --font-xl: calc(var(--font-base) * var(--font-ratio) / 5 * var(--torem));
   --font-2xl: calc(var(--font-base) * var(--font-ratio) / 3 * var(--torem));
 
-  /* Font Size */
-  --font-fluid-xs: fluid(10.667, 12.8);
-  --font-fluid-sm: fluid(14.222, 16);
-  --font-fluid-md: fluid(16, 18.286);
-  --font-fluid-lg: fluid(18, 21.333);
-  --font-fluid-xl: fluid(25.6, 32);
-  --font-fluid-2xl: fluid(32, 42.667);
-  --font-fluid-3xl: fluid(42.667, 64);
-
   /* Line Height */
   --leading-base: 4;
   --leading-xs: calc(var(--leading-base) * 3 * var(--torem));
