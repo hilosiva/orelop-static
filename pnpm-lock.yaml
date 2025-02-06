@@ -48,17 +48,17 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       vaultcss:
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.1.4
+        version: 0.1.4
       vite:
         specifier: ^6.1.0
         version: 6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)
       vite-plugin-sass-glob-import:
-        specifier: ^3.0.2
-        version: 3.0.2(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
+        specifier: ^5.0.0
+        version: 5.0.0(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
       vite-plugin-vaultcss:
-        specifier: ^0.1.2
-        version: 0.1.2(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
+        specifier: ^0.1.4
+        version: 0.1.4(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
 
 packages:
 
@@ -693,9 +693,6 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  brace-expansion@1.1.11:
-    resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
-
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
 
@@ -763,9 +760,6 @@ packages:
   commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
-
-  concat-map@0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   cosmiconfig@9.0.0:
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
@@ -974,9 +968,6 @@ packages:
     resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
     engines: {node: '>=14'}
 
-  fs.realpath@1.0.0:
-    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
-
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1002,10 +993,6 @@ packages:
     resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==}
     engines: {node: 20 || >=22}
     hasBin: true
-
-  glob@7.2.3:
-    resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
 
   global-modules@1.0.0:
     resolution: {integrity: sha512-sKzpEkf11GpOFuw0Zzjzmt4B4UZwjOcG757PPvrfhxcLFbq0wpsgpOqxpxtxFiCG4DtG93M6XRVbF2oGdev7bg==}
@@ -1077,15 +1064,8 @@ packages:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
 
-  inflight@1.0.6:
-    resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
-
-  inherits@2.0.4:
-    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
 
   ini@1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
@@ -1308,9 +1288,6 @@ packages:
     resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==}
     engines: {node: 20 || >=22}
 
-  minimatch@3.1.2:
-    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
   minimatch@9.0.4:
     resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -1360,9 +1337,6 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  once@1.4.0:
-    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
-
   os-locale@6.0.2:
     resolution: {integrity: sha512-qIb8bzRqaN/vVqEYZ7lTAg6PonskO7xOmM7OClD28F6eFa4s5XGe4bGpHUHMoCHbNNuR0pDYFeSLiW5bnjWXIA==}
     engines: {node: '>=12.20'}
@@ -1388,10 +1362,6 @@ packages:
 
   parse5@7.1.2:
     resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
-
-  path-is-absolute@1.0.1:
-    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
-    engines: {node: '>=0.10.0'}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -1795,18 +1765,18 @@ packages:
   varint@6.0.0:
     resolution: {integrity: sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==}
 
-  vaultcss@0.1.2:
-    resolution: {integrity: sha512-fHSb/F0yUsMxWuDcpE2l7+OXlNSV3ik6eHQZriK81P5K6gJE6LvtOQ4koFuhXpFkqtT6bmkWAbf9MHfmJHX3zQ==}
+  vaultcss@0.1.4:
+    resolution: {integrity: sha512-Xt4itzfuf+ICvIlV9FSRQ3Gd68Wam9I1jYr/AJEhM1F/fWvu5dOxR3YAnRyquWm8BglTMrf5UZvSVuWsrZUeSQ==}
 
-  vite-plugin-sass-glob-import@3.0.2:
-    resolution: {integrity: sha512-Tu6M6Fn4pFp1Gsvt+uOKAmPQyspNJSAWKV8GepHGR9Rmx4wujfS0wPjfmVk7QGqD+bSzr+P7L5VGGw9nPgiaMA==}
+  vite-plugin-sass-glob-import@5.0.0:
+    resolution: {integrity: sha512-jUrk+qJaf6UzSEAollm3cPYYmhiaamcTdLPiITn37BuYZ9ej+yAN7k7G5V1xmC7J7r60ebYJ5IEch5/hLHKsxQ==}
     peerDependencies:
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
+      vite: ^5.0.0 || ^6.0.0
 
-  vite-plugin-vaultcss@0.1.2:
-    resolution: {integrity: sha512-3/SUgGBGoinUWilQ/mXdZQtu7r4HheoaWxikssqC1MaNHoeEPo2OM1CFdwaUckugrCdNbCG4p8Szes8W2a6VZg==}
+  vite-plugin-vaultcss@0.1.4:
+    resolution: {integrity: sha512-G700R3Mqqp6RATEEnfAfhDRWImyGQJHal8vJwZQuT9MVGBdl6vzSkccHva6wrhBqghFRgswRhT6veoMQm4Acgw==}
     peerDependencies:
-      vite: ^5.4.0
+      vite: ^5.4.0 || ^6
 
   vite@6.1.0:
     resolution: {integrity: sha512-RjjMipCKVoR4hVfPY6GQTgveinjNuyLw+qruksLDvA5ktI1150VmcMBKmQaEWJhg/j6Uaf6dNCNA0AfdzUb/hQ==}
@@ -1868,9 +1838,6 @@ packages:
   wrap-ansi@8.1.0:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
-
-  wrappy@1.0.2:
-    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
   write-file-atomic@5.0.1:
     resolution: {integrity: sha512-+QU2zd6OTD8XWIJCbffaiQeH9U73qIqafo1x6V1snCWYGJf6cVE0cDR4D8xRzcEnfI21IFrUPzPGtcPf8AC+Rw==}
@@ -2420,11 +2387,6 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  brace-expansion@1.1.11:
-    dependencies:
-      balanced-match: 1.0.2
-      concat-map: 0.0.1
-
   brace-expansion@2.0.1:
     dependencies:
       balanced-match: 1.0.2
@@ -2503,8 +2465,6 @@ snapshots:
   colorjs.io@0.5.2: {}
 
   commander@7.2.0: {}
-
-  concat-map@0.0.1: {}
 
   cosmiconfig@9.0.0:
     dependencies:
@@ -2738,8 +2698,6 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
-  fs.realpath@1.0.0: {}
-
   fsevents@2.3.3:
     optional: true
 
@@ -2770,15 +2728,6 @@ snapshots:
       minipass: 7.1.2
       package-json-from-dist: 1.0.0
       path-scurry: 2.0.0
-
-  glob@7.2.3:
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 3.1.2
-      once: 1.4.0
-      path-is-absolute: 1.0.1
 
   global-modules@1.0.0:
     dependencies:
@@ -2847,14 +2796,7 @@ snapshots:
 
   imurmurhash@0.1.4: {}
 
-  inflight@1.0.6:
-    dependencies:
-      once: 1.4.0
-      wrappy: 1.0.2
-
   inherits@2.0.3: {}
-
-  inherits@2.0.4: {}
 
   ini@1.3.8: {}
 
@@ -3059,10 +3001,6 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  minimatch@3.1.2:
-    dependencies:
-      brace-expansion: 1.1.11
-
   minimatch@9.0.4:
     dependencies:
       brace-expansion: 2.0.1
@@ -3097,10 +3035,6 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  once@1.4.0:
-    dependencies:
-      wrappy: 1.0.2
-
   os-locale@6.0.2:
     dependencies:
       lcid: 3.1.1
@@ -3128,8 +3062,6 @@ snapshots:
   parse5@7.1.2:
     dependencies:
       entities: 4.5.0
-
-  path-is-absolute@1.0.1: {}
 
   path-key@3.1.1: {}
 
@@ -3558,7 +3490,7 @@ snapshots:
 
   varint@6.0.0: {}
 
-  vaultcss@0.1.2:
+  vaultcss@0.1.4:
     dependencies:
       '@hilosiva/oreset': 3.0.2
       browserslist: 4.24.4
@@ -3566,16 +3498,16 @@ snapshots:
       lightningcss-plugin-fluid: 0.0.3
       prettier: 3.4.2
 
-  vite-plugin-sass-glob-import@3.0.2(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
+  vite-plugin-sass-glob-import@5.0.0(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
     dependencies:
       ansi-colors: 4.1.3
-      glob: 7.2.3
-      minimatch: 3.1.2
+      glob: 11.0.0
+      minimatch: 10.0.1
       vite: 6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)
 
-  vite-plugin-vaultcss@0.1.2(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
+  vite-plugin-vaultcss@0.1.4(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
     dependencies:
-      vaultcss: 0.1.2
+      vaultcss: 0.1.4
       vite: 6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)
 
   vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8):
@@ -3611,8 +3543,6 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 5.1.2
       strip-ansi: 7.1.0
-
-  wrappy@1.0.2: {}
 
   write-file-atomic@5.0.1:
     dependencies:
