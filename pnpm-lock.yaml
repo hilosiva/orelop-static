@@ -32,9 +32,6 @@ importers:
       path:
         specifier: ^0.12.7
         version: 0.12.7
-      sass-embedded:
-        specifier: ^1.83.4
-        version: 1.83.4
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
@@ -53,11 +50,8 @@ importers:
       vite:
         specifier: ^6.1.0
         version: 6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)
-      vite-plugin-sass-glob-import:
-        specifier: ^5.0.0
-        version: 5.0.0(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
       vite-plugin-vaultcss:
-        specifier: ^0.1.4
+        specifier: ^0.1.2
         version: 0.1.4(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8))
 
 packages:
@@ -1768,11 +1762,6 @@ packages:
   vaultcss@0.1.4:
     resolution: {integrity: sha512-Xt4itzfuf+ICvIlV9FSRQ3Gd68Wam9I1jYr/AJEhM1F/fWvu5dOxR3YAnRyquWm8BglTMrf5UZvSVuWsrZUeSQ==}
 
-  vite-plugin-sass-glob-import@5.0.0:
-    resolution: {integrity: sha512-jUrk+qJaf6UzSEAollm3cPYYmhiaamcTdLPiITn37BuYZ9ej+yAN7k7G5V1xmC7J7r60ebYJ5IEch5/hLHKsxQ==}
-    peerDependencies:
-      vite: ^5.0.0 || ^6.0.0
-
   vite-plugin-vaultcss@0.1.4:
     resolution: {integrity: sha512-G700R3Mqqp6RATEEnfAfhDRWImyGQJHal8vJwZQuT9MVGBdl6vzSkccHva6wrhBqghFRgswRhT6veoMQm4Acgw==}
     peerDependencies:
@@ -1892,7 +1881,8 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
-  '@bufbuild/protobuf@2.2.3': {}
+  '@bufbuild/protobuf@2.2.3':
+    optional: true
 
   '@csstools/css-parser-algorithms@2.7.1(@csstools/css-tokenizer@2.4.1)':
     dependencies:
@@ -2402,7 +2392,8 @@ snapshots:
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
 
-  buffer-builder@0.2.0: {}
+  buffer-builder@0.2.0:
+    optional: true
 
   callsites@3.1.0: {}
 
@@ -2462,7 +2453,8 @@ snapshots:
 
   colord@2.9.3: {}
 
-  colorjs.io@0.5.2: {}
+  colorjs.io@0.5.2:
+    optional: true
 
   commander@7.2.0: {}
 
@@ -2785,7 +2777,8 @@ snapshots:
   immutable@4.3.0:
     optional: true
 
-  immutable@5.0.3: {}
+  immutable@5.0.3:
+    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -3174,6 +3167,7 @@ snapshots:
   rxjs@7.8.1:
     dependencies:
       tslib: 2.6.0
+    optional: true
 
   sass-embedded-android-arm64@1.83.4:
     optional: true
@@ -3266,6 +3260,7 @@ snapshots:
       sass-embedded-win32-arm64: 1.83.4
       sass-embedded-win32-ia32: 1.83.4
       sass-embedded-win32-x64: 1.83.4
+    optional: true
 
   sass@1.77.8:
     dependencies:
@@ -3419,6 +3414,7 @@ snapshots:
   supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
+    optional: true
 
   supports-hyperlinks@3.0.0:
     dependencies:
@@ -3440,8 +3436,10 @@ snapshots:
   sync-child-process@1.0.2:
     dependencies:
       sync-message-port: 1.1.3
+    optional: true
 
-  sync-message-port@1.1.3: {}
+  sync-message-port@1.1.3:
+    optional: true
 
   table@6.8.2:
     dependencies:
@@ -3460,7 +3458,8 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  tslib@2.6.0: {}
+  tslib@2.6.0:
+    optional: true
 
   type-fest@4.20.1: {}
 
@@ -3488,7 +3487,8 @@ snapshots:
 
   uuid@10.0.0: {}
 
-  varint@6.0.0: {}
+  varint@6.0.0:
+    optional: true
 
   vaultcss@0.1.4:
     dependencies:
@@ -3497,13 +3497,6 @@ snapshots:
       lightningcss: 1.29.1
       lightningcss-plugin-fluid: 0.0.3
       prettier: 3.4.2
-
-  vite-plugin-sass-glob-import@5.0.0(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
-    dependencies:
-      ansi-colors: 4.1.3
-      glob: 11.0.0
-      minimatch: 10.0.1
-      vite: 6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)
 
   vite-plugin-vaultcss@0.1.4(vite@6.1.0(@types/node@22.13.1)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.77.8)):
     dependencies:

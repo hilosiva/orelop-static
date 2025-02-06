@@ -2,7 +2,6 @@ import path from "path";
 import { viteHtmlOreder } from "@hilosiva/vite-plugin-html-oreder";
 import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
 import { defineConfig } from "vite";
-import sassGlobImports from "vite-plugin-sass-glob-import";
 import vaultcss from "vite-plugin-vaultcss";
 
 const dir = {
@@ -22,7 +21,6 @@ export default defineConfig({
       },
     }),
     vaultcss(),
-    sassGlobImports(),
   ],
   build: {
     outDir: `../${dir.outDir}`,
