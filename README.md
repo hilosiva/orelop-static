@@ -41,7 +41,7 @@ cd /path/to/project-directory
 2. 以下のコマンドを実行して、「Orelop Static」をインストールします。
 
 ```bash
-npm create orelop-static@latest
+npm create orelop@latest
 ```
 
 ※ はプロジェクト名を聞かれるのでプロジェクト名を入力してエンターしてください。
