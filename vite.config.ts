@@ -1,11 +1,9 @@
 import path from "path";
 import { viteHtmlOreder } from "@hilosiva/vite-plugin-html-oreder";
 import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
-import browserslist from "browserslist";
-import { browserslistToTargets, composeVisitors } from "lightningcss";
-import fluidVisitor from "lightningcss-plugin-fluid";
 import { defineConfig } from "vite";
 import sassGlobImports from "vite-plugin-sass-glob-import";
+import vaultcss from "vite-plugin-vaultcss";
 
 const dir = {
   src: "src",
@@ -15,7 +13,6 @@ const dir = {
 
 export default defineConfig({
   root: dir.src,
-  // base: "./",
   publicDir: `../${dir.publicDir}`,
   plugins: [
     viteHtmlOreder(),
@@ -24,6 +21,7 @@ export default defineConfig({
         preserveExt: true,
       },
     }),
+    vaultcss(),
     sassGlobImports(),
   ],
   build: {
@@ -31,17 +29,14 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        entryFileNames: "assets/js/[name]-[hash].js",
-        chunkFileNames: "assets/js/[name]-[hash].js",
-        assetFileNames: ({ name }) => {
-          if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(name ?? "")) {
-            return "assets/img/[name]-[hash][extname]";
+        entryFileNames: "assets/scripts/[name]-[hash].js",
+        chunkFileNames: "assets/scripts/[name]-[hash].js",
+        assetFileNames: ({ names }) => {
+          if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(names[0] ?? "")) {
+            return "assets/images/[name]-[hash][extname]";
           }
-          if (/\.css$/.test(name ?? "")) {
-            return "assets/css/[name]-[hash][extname]";
-          }
-          if (/\.js$/.test(name ?? "")) {
-            return "assets/js/[name]-[hash][extname]";
+          if (/\.css$/.test(names[0] ?? "")) {
+            return "assets/styles/[name]-[hash][extname]";
           }
           return "assets/[name]-[hash][extname]";
         },
@@ -62,14 +57,6 @@ export default defineConfig({
   },
 
   css: {
-    transformer: "lightningcss",
-    lightningcss: {
-      drafts: {
-        customMedia: true,
-      },
-      targets: browserslistToTargets(browserslist("> 0.3%, Firefox ESR, not dead")),
-      visitor: composeVisitors([fluidVisitor()]),
-    },
     devSourcemap: true,
   },
 });

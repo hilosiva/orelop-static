@@ -1,7 +1,0 @@
-.l-container {
-  container: container / inline-size;
-  box-sizing: content-box;
-  max-inline-size: var(--max-container-size, none);
-  padding-inline: var(--offset-md, 0);
-  margin-inline: auto;
-}

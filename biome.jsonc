@@ -22,7 +22,8 @@
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnknownMediaFeatureName": "off"
+        "noUnknownMediaFeatureName": "off",
+        "noUnknownFunction": "off"
       }
     }
   },
