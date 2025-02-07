@@ -4,7 +4,9 @@
   "version": "3.0.0",
   "type": "module",
   "author": "Shibata Hironori",
-  "browserslist": ["> 0.3%, Firefox ESR, not dead"],
+  "browserslist": [
+    "> 0.3%, Firefox ESR, not dead"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -28,8 +30,9 @@
     "stylelint": "^16.7.0",
     "stylelint-config-recess-order": "^5.0.1",
     "svgo": "^3.3.2",
-    "vaultcss": "^0.1.4",
+    "vaultcss": "^0.1.5",
+    "vaultscript": "^0.1.5",
     "vite": "^6.1.0",
-    "vite-plugin-vaultcss": "^0.1.4"
+    "vite-plugin-vaultcss": "^0.1.5"
   }
 }
