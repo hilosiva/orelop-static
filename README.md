@@ -1,4 +1,4 @@
-# Orelop Static（仮）
+# Orelop Static
 
 ![screenshot](https://github.com/hilosiva/orelop-static/blob/main/public/ogp.png)
 
@@ -8,9 +8,9 @@ Orelop Static は、俺流の静的サイト開発環境です。
 フロントエンドツールには「[vite](https://ja.vitejs.dev/)
 」を利用しているため、高速に静的サイトを開発することが可能です。
 
-- HTML + CSS（Scss/Sass） + JavaScriptによる開発が可能
+- HTML + CSS（Scss/Sass） + JavaScript（TypeScript）による開発が可能
 - CSSファイルにおいてもファイル分割やスタイルのネスト（入れ子）が可能
-- CSSファイル内で`pxtorem()`、`pxtoem()`、`fluid()`が利用可能
+- CSSファイル内でカスタムメディアクエリや、`fluid()`が利用可能
 - 画像やCSSファイル、JavaScriptファイルはビルド時にハッシュ値をファイル名に付与
 - 画像はビルド時に圧縮し、WebP、AVIFファイルを生成（htaccessで最適な画像をリスポンス）
 
@@ -22,15 +22,8 @@ Orelop Static を利用するには、あらかじめ以下のツールをマシ
 - [Node.js](https://nodejs.org/ja) >=20
 - [git](https://git-scm.com/)
 
-## ダウンロード
 
-### zipファイルでダウンロード
-
-1. [zipファイルをダウンロード](https://github.com/hilosiva/orelop-static/archive/refs/heads/main.zip)
-2. ダウンロードしたzipファイルを解凍
-3. 解凍したディレクトリ名をプロジェクト名に変更
-
-### インストール
+## インストール
 
 1. ターミナルを開き、「Orelop Static」を初期化したいディレクトリに移動します。
 
@@ -40,30 +33,45 @@ cd /path/to/project-directory
 
 2. 以下のコマンドを実行して、「Orelop Static」をインストールします。
 
+
+■ npm
 ```bash
 npm create orelop@latest
 ```
 
-※ はプロジェクト名を聞かれるのでプロジェクト名を入力してエンターしてください。
+■ yarn
+```bash
+yarn create orelop@latest
+```
+
+■ pnpm
+```bash
+pnpm create orelop@latest
+```
+プロジェクト名を聞かれるのでプロジェクト名を入力してエンターしてください。
+その後、「使用するフレームワーク」の選択から「Static」を選択することで「Orelop Static」がインストールされます。
+
+その他、CSSやJavaScriptのライブラリなどは任意で選択してください。
 
 ## 開発用サーバーの起動
 
 以下のコマンドで開発用サーバーを起動できます。
 
 ■ npm
-
 ```
-
 npm run dev
-
 ```
 
 ■ yarn
 
 ```
-
 yarn dev
+```
 
+■ pnpm
+
+```
+pnpm dev
 ```
 
 ## HTML の開発
@@ -78,10 +86,30 @@ HTML ファイルは「src」ディレクトリに配置して下さい。
 
 「Orelop Static」は、CSS、SCSS のどちらの開発にも対応しています。
 
-### CSS で開発
+CSS で開発するには「src/assets/styles/」ディレクトリ内にある「global.css」を利用し、
+SASS で開発する場合は、「global.css」を「global.scss」に変更してください。
 
-CSS で開発するには「src/assets/css/」ディレクトリ内にある「global.css」を利用して下さい。
+（HTMLファイルの `<link>` 要素の `href`属性も `scss` に変更してください。）
 
+
+### ベースCSS
+「global.css」にはデフォルトで以下の記述により俺流のベーススタイルのCSSを読みこんでいます。
+
+```css
+@import "vaultcss";
+```
+
+これにより、俺流のリセットや便利なカスタムプロパティなどが利用できます。
+
+不必要な場合は削除してください。
+また、resetのみ利用したい場合には、以下のように resetスタイルのみ読み込むことも可能です。
+
+```css
+@import "vaultcss/reset";
+```
+
+
+### ネスティングルール
 「Orelop Static」は、「[CSS Nesting Module](https://www.w3.org/TR/css-nesting-1/)」に対応しているため、スタイルルールのネスト（入れ子）が利用できます。
 
 例
@@ -98,7 +126,45 @@ CSS で開発するには「src/assets/css/」ディレクトリ内にある「g
 }
 ```
 
-また、`@import` による、CSS ファイルを分割にも対応しています。
+### カスタムメディアクエリ
+カスタムメディアクエリを使うことも可能です。
+
+デフォルトでは、以下のカスタムメディアクエリが自動で登録されます。
+
+
+```css
+@custom-media --xxs (width >= 23.4375rem);
+@custom-media --xs (width >= 25rem);
+@custom-media --sm (width >= 36rem);
+@custom-media --md (width >= 48rem);
+@custom-media --lg (width >= 64rem);
+@custom-media --xl (width >= 80rem);
+@custom-media --xxl (width >= 96rem);
+```
+
+
+従って、以下のように少ない記述量でレスポンシブ対応が可能です。
+
+
+```css
+.section {
+  display: block grid;
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
+
+  @media (--md) {
+    --cols: 2;
+  }
+
+  @media (--lg) {
+    --cols: 3;
+  }
+}
+```
+
+
+### @import
+
+`@import` による、CSS ファイルの分割にも対応しています。
 
 例：「base」ディレクトリ内の「oreset.css」と「components」ディレクトリ内の「hero.css」の読み込み
 
@@ -107,53 +173,9 @@ CSS で開発するには「src/assets/css/」ディレクトリ内にある「g
 @import "components/hero.css";
 ```
 
-また、CSSファイル内で下記のオリジナル関数が利用可能です。
-
-- `pxtorem()` : `px` を `rem` に変換
-- `pxtoem()` ： `px` を `em` に変換
-- `fluid()` : 最小値（px）、最大値（px）から `clamp()` を生成
-
-```css
-div {
-  margin-block-start: pxtorem(32); /* 2rem */
-  padding-block: pxtoem(24) pxtoem(16); /* 1.5em 1em  */
-}
-
-p {
-  /*
-    fluid(最小値（px）, 最大値(px), [最小ビューポート(px)], [最大ビューポート(px)])
-    最小ビューポートの初期値： 320
-    最大ビューポートの初期値： 1920
-  */
-  font-size: fluid(16,24); /* clamp(1rem, 0.8786407766990291rem + 0.517799352750809vw, 1.5rem) */
-}
-```
 
 
-最小ビューポートや、 最大ビューポートの初期値を変更する場合は、`postcss.config.cjs` で、`postcss-transore` のオプションを指定します。
-
-```js
-module.exports = {
-  plugins: [
-    require("@hilosiva/postcss-transore", {
-      minViewPort: 375, // 最小ビューポートの初期値を 375 に変更
-      maxViewPort: 1440, // 最大ビューポートの初期値を 1440 に変更
-    }),
-  ],
-};
-```
-
-
-
-### SCSS で開発
-
-scss を使って CSS を開発する場合は、「src/assets/scss/」ディレクトリ内に scss ファイルを作成して、HTML ファイルに `<link>` 要素で読み込んでください。
-
-```html
-<link rel="stylesheet" href="/assets/scss/global.scss" />
-```
-
-glob パターンによる読み込みにも対応しています。
+SASSの場合は、glob パターンによる読み込みにも対応しています。
 
 例：「fondation」ディレクトリと「layout」ディレクトリ内にあるすべての.scss ファイルの読み込み
 
@@ -162,9 +184,56 @@ glob パターンによる読み込みにも対応しています。
 @use "layout/**/*.scss";
 ```
 
+### オリジナル関数
+CSSファイル内では、下記のオリジナル関数が利用可能です。
+
+- `fluid()` : 最小値、最大値から `clamp()` を生成
+
+```css
+p {
+  /*
+    fluid(最小値, 最大値, [最小ビューポート(px)], [最大ビューポート(px)])
+    最小ビューポートの初期値： 320
+    最大ビューポートの初期値： 1920
+  */
+  font-size: fluid(16px 24px); /* clamp(1rem, 0.8786407766990291rem + 0.517799352750809vw, 1.5rem) */
+}
+```
+
+最小値と最大値には `px` または `rem` が使えます。
+
+
+最小ビューポートや、 最大ビューポートの初期値を変更する場合は、`vite.config.ts` で、`vaultcss(),` のオプションを指定します。
+
+```ts
+export default defineConfig({
+  ...
+  plugins: [
+    ...
+    vaultcss({
+      fluid: {
+        minViewPort: 375, // 最小ビューポートの初期値を 375 に変更
+        maxViewPort: 1440, // 最大ビューポートの初期値を 1440 に変更
+        baseFontSize: 16, // ベースのフォントサイズ（規定値: 16）
+      }
+    }),
+  ],
+  ...
+})
+```
+
+
+
+
+
 ## JavaScript の開発
 
-JavaScript の開発は「src/assets/js/」ディレクトリ内の「main.js」を利用して下さい。
+JavaScript の開発は「src/assets/scripts/」ディレクトリ内の「main.ts」を利用して下さい。
+JavaScriptを利用する場合は拡張子を `.js` に変更してください。
+
+（HTMLファイルの `<script>` 要素の `src`属性も `js` に変更してください。）
+
+
 
 ## 納品データの準備
 
@@ -177,20 +246,19 @@ npm run build
 ```
 
 ■ yarn
-
 ```
 yarn build
 ```
 
-ビルドを行うと、「src/assets/img/」ディレクトリ内の画像ファイルを最適化（圧縮や、webp ファイルなどの生成）を行い、ハッシュ値をつけて「dist/assets/img/」内に配置されます。
+ビルドを行うと、「src/assets/images/」ディレクトリ内の画像ファイルを最適化（圧縮や、webp ファイルなどの生成）を行い、ハッシュ値をつけて「dist/assets/images/」内に配置されます。
 
 画像の圧縮率や、生成するフォーマットなどに関しては、[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer)を利用しているため、[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer)のオプションで設定して下さい。
 
 「.htaccess」を使用しており、webp が利用できるブラウザで閲覧した場合、「.jpg」や「.png」ファイルは、webp ファイルがレスポンスされます。
 
-.scss ファイルや.css ファイルは、「dist/assets/css/」内に「index-[ハッシュ値].css」というファイル名で配置されます。
+.scss ファイルや.css ファイルは、「dist/assets/styles/」内に「index-[ハッシュ値].css」というファイル名で配置されます。
 
-.js ファイルは「dist/assets/css/」内に「main-[ハッシュ値].js」というファイル名で配置されます。
+.js ファイルは「dist/assets/scripts/」内に「main-[ハッシュ値].js」というファイル名で配置されます。
 
 ## 納品データのプレビュー
 
@@ -206,4 +274,11 @@ npm run preview
 
 ```
 yarn preview
+```
+
+
+■ pnpm
+
+```
+pnpm preview
 ```
