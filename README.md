@@ -19,8 +19,7 @@ Orelop Static は、俺流の静的サイト開発環境です。
 
 Orelop Static を利用するには、あらかじめ以下のツールをマシンにインストールしておいて下さい。
 
-- [Node.js](https://nodejs.org/ja) >=20
-- [git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/ja) >= 20
 
 
 ## インストール
@@ -48,10 +47,12 @@ yarn create orelop@latest --template=static
 ```bash
 pnpm create orelop@latest --template=static
 ```
-プロジェクト名を聞かれるのでプロジェクト名を入力してエンターしてください。
-その後、「使用するフレームワーク」の選択から「Static」を選択することで「Orelop Static」がインストールされます。
 
-その他、CSSやJavaScriptのライブラリなどは任意で選択してください。
+プロジェクト名を聞かれるのでプロジェクト名を入力してエンターしてください。
+
+続いて、利用するCSSのプリプロセッサーやフレームワーク（SassやTailwindCSS）や、
+JavaScriptのライブラリ（GSAPやLenis、Rola）などを任意で選択してください。
+
 
 ## 開発用サーバーの起動
 
@@ -63,13 +64,11 @@ npm run dev
 ```
 
 ■ yarn
-
 ```
 yarn dev
 ```
 
 ■ pnpm
-
 ```
 pnpm dev
 ```
@@ -82,12 +81,12 @@ HTML ファイルは「src」ディレクトリに配置して下さい。
 
 「Public」ディレクトリ内に保存したファイルは、ビルド後に納品用テーマディレクトリとして「dist」ディレクトリにコピーされます。
 
-## CSS/SCSS の開発
+## CSS/Sass の開発
 
-「Orelop Static」は、CSS、SCSS のどちらの開発にも対応しています。
+「Orelop Static」は、CSS、Sass のどちらの開発にも対応しています。
 
 CSS で開発するには「src/assets/styles/」ディレクトリ内にある「global.css」を利用し、
-SASS で開発する場合は、「global.css」を「global.scss」に変更してください。
+Sass で開発する場合は、「global.css」を「global.scss」に変更してください。
 
 （HTMLファイルの `<link>` 要素の `href`属性も `scss` に変更してください。）
 
@@ -166,11 +165,13 @@ SASS で開発する場合は、「global.css」を「global.scss」に変更し
 
 `@import` による、CSS ファイルの分割にも対応しています。
 
-例：「base」ディレクトリ内の「oreset.css」と「components」ディレクトリ内の「hero.css」の読み込み
+例：「base」ディレクトリ内の「reset.css」と「components」ディレクトリ内の「hero.css」の読み込み
 
 ```css
-@import "base/oreset.css";
-@import "components/hero.css";
+@layer settings, base, layouts, vendors, components, utilities;
+
+@import "base/reset.css" layer(base);
+@import "components/hero.css" layer(components);
 ```
 
 
@@ -252,7 +253,8 @@ yarn build
 
 ビルドを行うと、「src/assets/images/」ディレクトリ内の画像ファイルを最適化（圧縮や、webp ファイルなどの生成）を行い、ハッシュ値をつけて「dist/assets/images/」内に配置されます。
 
-画像の圧縮率や、生成するフォーマットなどに関しては、[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer)を利用しているため、[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer)のオプションで設定して下さい。
+画像の圧縮率や、生成するフォーマットなどに関しては、[@hilosiva/vite-plugin-image-optimizer](https://github.com/hilosiva/vite-plugins/tree/main/packages/vite-plugin-image-optimizer)を利用しているため、[@hilosiva/vite-plugin-image-optimizer](https://github.com/hilosiva/vite-plugins/tree/main/packages/vite-plugin-image-optimizer)のオプションで設定して下さい。
+
 
 「.htaccess」を使用しており、webp が利用できるブラウザで閲覧した場合、「.jpg」や「.png」ファイルは、webp ファイルがレスポンスされます。
 
