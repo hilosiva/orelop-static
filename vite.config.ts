@@ -1,6 +1,6 @@
 import path from "path";
-import { viteHtmlOreder } from "@hilosiva/vite-plugin-html-oreder";
-import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
+import { viteHtmlLoader } from "@hilosiva/vite-plugin-html-loader";
+import { viteImageOptimazer } from "@hilosiva/vite-plugin-image-optimizer";
 import { defineConfig } from "vite";
 import vaultcss from "vite-plugin-vaultcss";
 
@@ -14,8 +14,8 @@ export default defineConfig({
   root: dir.src,
   publicDir: `../${dir.publicDir}`,
   plugins: [
-    viteHtmlOreder(),
-    viteImageOretimaizer({
+    viteHtmlLoader(),
+    viteImageOptimazer({
       generate: {
         preserveExt: true,
       },
