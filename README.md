@@ -206,6 +206,8 @@ p {
 
 最小ビューポートや、 最大ビューポートの初期値を変更する場合は、`vite.config.ts` で、`vaultcss(),` のオプションを指定します。
 
+詳細は、[lightningcss-plugin-fluid](https://github.com/hilosiva/lightningcss-plugin-fluid) をご確認ください。
+
 ```ts
 export default defineConfig({
   ...
@@ -216,6 +218,7 @@ export default defineConfig({
         minViewPort: 375, // 最小ビューポートの初期値を 375 に変更
         maxViewPort: 1440, // 最大ビューポートの初期値を 1440 に変更
         baseFontSize: 16, // ベースのフォントサイズ（規定値: 16）
+        unit: "cqi" // 推奨値に使う単位（規定値: "vw"）
       }
     }),
   ],
