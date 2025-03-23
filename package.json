@@ -4,7 +4,7 @@
   "version": "3.0.1",
   "type": "module",
   "author": "Shibata Hironori",
-  "browserslist": ["> 0.3%, Firefox ESR, not dead"],
+  "browserslist": ["defaults"],
   "engines": {
     "node": ">=20"
   },
