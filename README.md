@@ -132,13 +132,13 @@ Sass で開発する場合は、「global.css」を「global.scss」に変更し
 
 
 ```css
-@custom-media --xxs (width >= 23.4375rem);
-@custom-media --xs (width >= 25rem);
-@custom-media --sm (width >= 36rem);
-@custom-media --md (width >= 48rem);
-@custom-media --lg (width >= 64rem);
-@custom-media --xl (width >= 80rem);
-@custom-media --xxl (width >= 96rem);
+@custom-media --xxs (width >= 23.4375rem); /* 375px */
+@custom-media --xs (width >= 25rem); /* 400px */
+@custom-media --sm (width >= 36rem); /* 576px */
+@custom-media --md (width >= 48rem); /* 768px */
+@custom-media --lg (width >= 64rem); /* 1024px */
+@custom-media --xl (width >= 80rem); /* 1280px */
+@custom-media --xxl (width >= 96rem); /* 1536px */
 ```
 
 
@@ -168,7 +168,7 @@ Sass で開発する場合は、「global.css」を「global.scss」に変更し
 例：「base」ディレクトリ内の「reset.css」と「components」ディレクトリ内の「hero.css」の読み込み
 
 ```css
-@layer settings, base, layouts, vendors, components, utilities;
+@layer settings, base, general, vendors, components;
 
 @import "base/reset.css" layer(base);
 @import "components/hero.css" layer(components);

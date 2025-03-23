@@ -1,3 +1,8 @@
 {
-  "recommendations": ["yusukehirao.vscode-markuplint", "stylelint.vscode-stylelint", "biomejs.biome"]
+  "recommendations": [
+    "yusukehirao.vscode-markuplint",
+    "stylelint.vscode-stylelint",
+    "biomejs.biome",
+    "esbenp.prettier-vscode"
+  ]
 }

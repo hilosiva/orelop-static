@@ -1,7 +1,7 @@
 {
   "name": "orelopstatic",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "author": "Shibata Hironori",
   "browserslist": ["> 0.3%, Firefox ESR, not dead"],
@@ -13,20 +13,23 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "lint:html": "markuplint \"**/*.html\"",
-    "lint:css": "stylelint --fix **/*.{css,scss,sass}",
-    "lint:es": "eslint /src --fix"
+    "check": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@hilosiva/biome-config": "^0.0.1",
+    "@hilosiva/stylelint-config": "^0.0.1",
     "@hilosiva/vite-plugin-html-loader": "^0.1.0",
     "@hilosiva/vite-plugin-image-optimizer": "^0.1.0",
     "markuplint": "^4.9.2",
     "path": "^0.12.7",
     "stylelint": "^16.7.0",
-    "stylelint-config-recess-order": "^5.0.1",
-    "vaultcss": "^0.1.9",
+    "vaultcss": "^0.1.10",
     "vaultscript": "^0.1.6",
     "vite": "^6.1.0",
     "vite-plugin-vaultcss": "^0.1.9"
+  },
+  "volta": {
+    "node": "20.10.0"
   }
 }
