@@ -13,7 +13,13 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "lint:html": "markuplint \"**/*.html\"",
-    "check": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}"
+    "check": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.html": "markuplint",
+    "*.{css,scss}": ["biome check --write", "stylelint --fix"],
+    "*.{ts,tsx,js,jsx}": ["biome check --write"]
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -21,6 +27,8 @@
     "@hilosiva/stylelint-config": "^0.0.1",
     "@hilosiva/vite-plugin-html-loader": "^0.1.0",
     "@hilosiva/vite-plugin-image-optimizer": "^0.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "markuplint": "^4.9.2",
     "path": "^0.12.7",
     "stylelint": "^16.7.0",
@@ -31,5 +39,6 @@
   },
   "volta": {
     "node": "20.10.0"
-  }
+  },
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
 }
