@@ -3,6 +3,7 @@
     "yusukehirao.vscode-markuplint",
     "stylelint.vscode-stylelint",
     "biomejs.biome",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig"
   ]
 }
