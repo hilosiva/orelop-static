@@ -5,3 +5,5 @@ console.info(
 );
 import.meta.glob(["../images/**"]);
 /* --------- 　ここまで編集禁止  ------------- */
+
+import { MomentumScroll } from "vaultscript";
