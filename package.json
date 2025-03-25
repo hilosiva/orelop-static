@@ -13,13 +13,14 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "lint:html": "markuplint \"**/*.html\"",
-    "check": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}",
+    "lint:style": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}",
+    "lint:script": "biome check --write ./src",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.html": "markuplint",
+    "*.html": ["markuplint", "prettier --write"],
     "*.{css,scss}": ["biome check --write", "stylelint --fix"],
-    "*.{ts,tsx,js,jsx}": ["biome check --write"]
+    "*.{ts,tsx,js,jsx}": "biome check --write"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -31,6 +32,7 @@
     "lint-staged": "^15.5.0",
     "markuplint": "^4.9.2",
     "path": "^0.12.7",
+    "prettier": "^3.5.3",
     "stylelint": "^16.7.0",
     "vaultcss": "^0.1.10",
     "vaultscript": "^0.1.6",
@@ -39,6 +41,5 @@
   },
   "volta": {
     "node": "20.10.0"
-  },
-  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
+  }
 }
