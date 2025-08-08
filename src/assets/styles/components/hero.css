@@ -16,13 +16,13 @@
 .hero__title {
   margin-block: fluid(2.5rem 4rem) fluid(24px 32px 768px 1024px);
   font-family: var(--font-sans-en);
-  font-size: fluid(40px 80px);
+  font-size: fluid(40px 80px cqi);
   letter-spacing: var(--tracking-widest);
 }
 
 .hero__text {
   margin-block-start: 1.5em;
-  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-size: fluid(12px 64px cqi);
   letter-spacing: 0.06em;
 }
 
